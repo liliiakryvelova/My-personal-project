@@ -16,7 +16,9 @@ nav {
     background-color: #a7b1c7;
     position: sticky;
     top: 0;
-    min-height: 4rem; /* Add this line to increase height */
+    min-height: 4rem;
+    position: sticky;
+    z-index: 10; /* above iframe */ /* Add this line to increase height */
 }
 
 nav .title {
@@ -42,8 +44,10 @@ nav .title.active {
 }
 
 nav ul {
-    display: flex;
+  display: flex;
+  flex-direction: row;
 }
+
 
 nav ul li {
     list-style: none;
@@ -81,6 +85,7 @@ nav .menu {
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
+    z-index: 20;
 }
 
 nav .menu span {
@@ -91,35 +96,45 @@ nav .menu span {
 }
 
 
+/* Default: menu visible on large screens */
+nav ul {
+  display: flex;
+}
 
-@media (max-width: 480px) {
-    nav {
-        flex-direction: column;
-        align-items: stretch;
-        min-height: 3.2rem;
-        width: 100%;
-    }
-    nav ul {
-        display: none;           /* Hide links by default on mobile */
-        position: absolute;
-        top: 3.2rem;             /* Adjust based on your nav height */
-        left: 0;
-        width: 100%;
-        background: #a7b1c7;
-        flex-direction: column;
-        z-index: 1;
-    }
+@media (max-width: 481px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 3.2rem;
+    left: 0;
+    width: 100%;
+    background: #a7b1c7;
+    flex-direction: column;
+    align-items: center; /* ✅ Center horizontally */
+    z-index: 1;
+  }
 
-    nav ul.open {
-        display: flex;           /* Show links when menu is open */
-        flex-direction: column;
-    }
+  nav ul.open {
+    display: flex;
+  }
 
-    nav .menu {
-        display: flex;
-        position: absolute;
-        top: 0.8rem;
-        right: 1rem;
-        z-index: 2;
-    }
+  nav .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    z-index: 2;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center; /* ✅ Center text */
+  }
+
+  nav ul li .title {
+    display: inline-block;
+    width: auto;
+    padding: 0.5rem 1rem;
+  }
 }

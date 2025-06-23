@@ -4,4 +4,5 @@
   text-align: center;
   padding: 1rem;
   font-family: 'Lavishly Yours', cursive;
+  color: white; /* Match header text color */
 }

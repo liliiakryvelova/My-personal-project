@@ -1,3 +1,4 @@
+
 .App {
   background-color: #fefefe;
   height: 100%;
@@ -18,4 +19,10 @@ html, body {
 /* Main content should grow to fill space */
 .content-wrap {
   flex: 1;
+}
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #f1ebda;
 }
