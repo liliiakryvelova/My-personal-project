@@ -44,14 +44,10 @@ export default function Navbar() {
         <li>
           <NavLink to="/contact" className="title" onClick={() => setMenuOpen(false)}>Contact</NavLink>
         </li>
-        <li
-          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', height: '100%' }}
-          onClick={() => {
-            handleToggleMode();
-            setMenuOpen(false);
-          }}
-        >
-          {darkMode ? <LightModeIcon style={{ color: '#FFD700' }} /> : <ModeNightIcon style={{ color: '#333' }} />}
+        <li style={{ cursor: 'pointer' }} onClick={handleToggleMode}>
+          <span className="title" style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '0.5rem' }}>
+            {darkMode ? <LightModeIcon style={{ color: '#FFD700', verticalAlign: 'middle' }} /> : <ModeNightIcon style={{ color: '#333', verticalAlign: 'middle' }} />}
+          </span>
         </li>
       </ul>
     </nav>
