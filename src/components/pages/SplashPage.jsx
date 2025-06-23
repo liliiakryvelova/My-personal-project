@@ -7,7 +7,7 @@ const SplineSplash = () => {
       style={{
         position: "relative",
         width: "100vw",
-        height: "100vh",
+        height: "85vh",
         backgroundColor: "#000",
         overflow: "hidden",
       }}
