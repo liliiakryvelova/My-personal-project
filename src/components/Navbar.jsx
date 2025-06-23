@@ -7,7 +7,9 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav>
-        <NavLink to="/" >Website</NavLink>
+        <Link to="/" className="title" end>
+           My personal page.
+        </Link>
         <div className='menu' 
             onClick={() => setMenuOpen(!menuOpen)}>
             <span></span>
@@ -16,13 +18,13 @@ export default function Navbar() {
         </div>
         <ul className={ menuOpen ? "open" : "" }>
             <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/about" className="title">About</NavLink>
             </li>
             <li>
-                <NavLink to="/services">Services</NavLink>
+                <NavLink to="/services" className="title">Services</NavLink>
             </li>
             <li>
-                <NavLink to="/contact">Contact</NavLink>
+                <NavLink to="/contact" className="title">Contact</NavLink>
             </li>
         </ul>
     </nav>

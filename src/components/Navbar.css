@@ -1,3 +1,10 @@
+.title {
+  font-family: 'Lavishly Yours', cursive, 'Segoe Script', 'Comic Sans MS', sans-serif;
+  font-size: medium;
+}
+
+
+
 .active {
     background-color: #1d4ed8;
 }
@@ -14,10 +21,24 @@ nav {
 
 nav .title {
     font-size: 1.5rem;
-    margin: 1rem;
     font-weight: bold;
-    text-decoration: none;
     color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    /* Button-like style */
+    background-color: transparent;
+    border: none;
+    margin: 0 0.5rem;
+    display: block;
+}
+
+nav .title.active {
+    background-color: #1d4ed8;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.15);
+    border: 1px solid #2563eb;
+    color: #fff;
 }
 
 nav ul {
