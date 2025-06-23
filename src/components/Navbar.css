@@ -110,8 +110,14 @@ nav ul {
     width: 100%;
     background: #a7b1c7;
     flex-direction: column;
-    align-items: center; /* ✅ Center horizontally */
+    align-items: center;
     z-index: 1;
+  }
+
+  body.dark-mode nav ul {
+    background: #23272f !important; /* Solid dark background for dark mode */
+    color: #f5f5f5 !important;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.25);
   }
 
   nav ul.open {
