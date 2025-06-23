@@ -32,13 +32,23 @@ nav ul li a {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 0 0.5rem;
-    border-radius: 0.5 rem;
+    border-radius: 0.5rem; /* Fixed typo */
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 nav ul li a:not(.active):hover {
     background-color: #172554;
+}
+
+nav ul li a.active {
+    background-color: #1d4ed8;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.15);
+    border: 1px solid #2563eb;
+    color: #fff;
+    font-weight: 600;
 }
 
 nav .menu {
@@ -59,6 +69,8 @@ nav .menu span {
     border-radius: 0.2rem;
 }
 
+
+
 @media (max-width: 480px) {
     nav {
         flex-direction: column;
@@ -66,6 +78,22 @@ nav .menu span {
         min-height: 3.2rem;
         width: 100%;
     }
+    nav ul {
+        display: none;           /* Hide links by default on mobile */
+        position: absolute;
+        top: 3.2rem;             /* Adjust based on your nav height */
+        left: 0;
+        width: 100%;
+        background: #a7b1c7;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    nav ul.open {
+        display: flex;           /* Show links when menu is open */
+        flex-direction: column;
+    }
+
     nav .menu {
         display: flex;
         position: absolute;
@@ -73,16 +101,4 @@ nav .menu span {
         right: 1rem;
         z-index: 2;
     }
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 0.25rem;
-        background: linear-gradient(90deg, #e0e7ff 0%, #b2f0ff 100%);
-        position: absolute;
-        top: 3.2rem;
-        left: 0;
-        z-index: 1;
-    }
-
 }
