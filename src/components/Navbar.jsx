@@ -40,14 +40,11 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${darkMode ? 'dark' : 'light'}`}>
       <div className="nav-container">
-        <Link
-          to="/"
-          className="nav-logo"
-          onClick={closeMenu}
-        >
+        <div className="nav-logo">
           <HomeIcon className="logo-icon" />
           <span className="logo-text">My Portfolio</span>
-        </Link>
+          <span className="enhancement-text">In process of enhancement</span>
+        </div>
 
         <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(prev => !prev)}>
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -56,12 +53,22 @@ export default function Navbar() {
         <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
           <li className="nav-item">
             <NavLink 
-              to="/about" 
+              to="/" 
               className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               onClick={closeMenu}
             >
               <PersonIcon className="nav-icon" />
               <span>About</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink 
+              to="/home" 
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              onClick={closeMenu}
+            >
+              <HomeIcon className="nav-icon" />
+              <span>Home</span>
             </NavLink>
           </li>
           <li className="nav-item">

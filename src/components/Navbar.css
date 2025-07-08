@@ -44,7 +44,6 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  text-decoration: none;
   font-weight: 700;
   font-size: 1.2rem;
   color: #2563eb;
@@ -53,10 +52,6 @@
 
 .navbar.dark .nav-logo {
   color: #60a5fa;
-}
-
-.nav-logo:hover {
-  transform: translateY(-1px);
 }
 
 .logo-icon {
@@ -75,6 +70,20 @@
   -webkit-text-fill-color: transparent;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
+}
+
+.enhancement-text {
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 400;
+  font-style: italic;
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.navbar.dark .enhancement-text {
+  color: #9ca3af;
 }
 
 /* Navigation Menu */
@@ -327,6 +336,10 @@
   }
 
   .logo-text {
+    display: none;
+  }
+
+  .enhancement-text {
     display: none;
   }
 
