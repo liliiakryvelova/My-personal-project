@@ -10,6 +10,9 @@ A modern React portfolio website featuring glassmorphism design, responsive navi
 - **Interactive Components** - Hover effects and smooth animations throughout
 - **Mobile Optimized** - Fully responsive design for all device sizes
 - **Modern Footer** - Social links and scroll-to-top functionality
+- **Global Visitor Counter** - Real-time visitor tracking shared across all users
+- **Visitor Analytics** - Location-based visitor statistics with privacy protection
+- **Three.js Integration** - Interactive 3D animations on the About page
 
 ## 🚀 Technologies Used
 

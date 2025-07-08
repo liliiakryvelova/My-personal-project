@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Footer.css';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -6,12 +6,18 @@ import EmailIcon from '@mui/icons-material/Email';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import useVisitorCounter from '../hooks/useVisitorCounter';
+import VisitorStats from './VisitorStats';
 
 function Footer() {
   const [darkMode, setDarkMode] = useState(false);
+  const [showStats, setShowStats] = useState(false);
+  const { visitorCount, currentVisitor, visitorStats, loading } = useVisitorCounter();
 
   // Check if dark mode is active
-  React.useEffect(() => {
+  useEffect(() => {
     const isDark = document.body.classList.contains('dark-mode');
     setDarkMode(isDark);
 
@@ -87,12 +93,37 @@ function Footer() {
         {/* Footer bottom */}
         <div className="footer-bottom">
           <div className="footer-divider"></div>
-          <p className="copyright">
-            © {currentYear} Liliia Kryvelova. Made with <FavoriteIcon className="heart-icon" /> in React
-          </p>
+          <div className="footer-info">
+            <p className="copyright">
+              © {currentYear} Liliia Kryvelova. Made with <FavoriteIcon className="heart-icon" /> in React
+            </p>
+            <div className="visitor-info">
+              <button 
+                className="visitor-counter clickable"
+                onClick={() => setShowStats(true)}
+                title="Click to view detailed visitor statistics"
+              >
+                <VisibilityIcon className="visitor-icon" />
+                Visitors: {loading ? '...' : visitorCount.toLocaleString()}
+              </button>
+              {currentVisitor && currentVisitor.city && currentVisitor.country && (
+                <p className="visitor-location">
+                  <LocationOnIcon className="location-icon" />
+                  Latest: {currentVisitor.city}, {currentVisitor.country}
+                </p>
+              )}
+            </div>
+          </div>
           <p className="footer-note">All rights reserved.</p>
         </div>
       </div>
+      
+      {/* Visitor Stats Modal */}
+      <VisitorStats 
+        visitorStats={visitorStats}
+        isOpen={showStats}
+        onClose={() => setShowStats(false)}
+      />
     </footer>
   );
 }
