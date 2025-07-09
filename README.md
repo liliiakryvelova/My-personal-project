@@ -135,7 +135,8 @@ https://pagespeed.web.dev/analysis?url=https://liliiakryvelova.github.io/My-pers
 
 ### 📊 **Actual Performance Results Achieved!**
 
-![PageSpeed Insights Results](./public/images/Screenshot%202025-07-08%20at%206.13.10%20PM.png)
+<img width="956" alt="Screenshot 2025-07-08 at 6 13 10 PM" src="https://github.com/user-attachments/assets/c0a91570-6c2f-4154-910c-e84d15e4a413" />
+
 
 **🎉 Real Performance Scores:**
 - **Performance: 88/100** (Mobile) - Excellent score!
