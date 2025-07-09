@@ -1,5 +1,34 @@
 /* About Page Styles with Three.js Integration */
 
+/* Animation loader styles */
+.animation-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #667eea;
+  z-index: 10;
+}
+
+.animation-loader .loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.animation-loader p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
 /* Loading State Styles */
 .loading-overlay {
   position: fixed;
@@ -137,6 +166,8 @@
   height: 100%;
   z-index: 1;
   pointer-events: none;
+  will-change: transform; /* Optimize for animations */
+  contain: layout style paint; /* Improve rendering performance */
 }
 
 .three-canvas canvas {
@@ -166,6 +197,7 @@
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+  transform: translateZ(0); /* Force GPU layer */
 }
 
 .about-subtitle {
@@ -193,6 +225,7 @@
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease-out;
+  will-change: transform; /* Optimize hover animations */
 }
 
 .about-card::before {
@@ -348,4 +381,30 @@ body.dark-mode .about-card:hover {
 
 .about-container.loaded .about-content {
   opacity: 1;
+}
+
+/* Three.js Canvas Placeholder */
+.three-canvas-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a202c 100%);
+  z-index: 1;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .three-canvas {
+    display: none; /* Hide 3D animations for users who prefer reduced motion */
+  }
+  
+  .about-card {
+    transition: none;
+  }
+  
+  .skill-tag {
+    transition: none;
+  }
 }

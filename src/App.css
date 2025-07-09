@@ -19,6 +19,37 @@ html, body {
 .content-wrap {
   flex: 1;
 }
+
+/* Page loader styles */
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: #667eea;
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.page-loader p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.8;
+}
 .crimson-text-regular {
   font-family: "Crimson Text", serif;
   font-weight: 400;

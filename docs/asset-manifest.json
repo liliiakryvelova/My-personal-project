@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/My-personal-project/static/css/main.7461f116.css",
-    "main.js": "/My-personal-project/static/js/main.e2c6370d.js",
-    "index.html": "/My-personal-project/index.html",
-    "main.7461f116.css.map": "/My-personal-project/static/css/main.7461f116.css.map",
-    "main.e2c6370d.js.map": "/My-personal-project/static/js/main.e2c6370d.js.map"
+    "main.css": "/My-personal-project/static/css/main.30d51450.css",
+    "main.js": "/My-personal-project/static/js/main.bb49d264.js",
+    "static/css/386.a81b9f50.chunk.css": "/My-personal-project/static/css/386.a81b9f50.chunk.css",
+    "static/js/386.06d35d09.chunk.js": "/My-personal-project/static/js/386.06d35d09.chunk.js",
+    "static/css/196.e375c996.chunk.css": "/My-personal-project/static/css/196.e375c996.chunk.css",
+    "static/js/196.27f27847.chunk.js": "/My-personal-project/static/js/196.27f27847.chunk.js",
+    "static/js/755.9fa25b90.chunk.js": "/My-personal-project/static/js/755.9fa25b90.chunk.js",
+    "static/js/487.6e98d14f.chunk.js": "/My-personal-project/static/js/487.6e98d14f.chunk.js",
+    "static/js/206.e4425038.chunk.js": "/My-personal-project/static/js/206.e4425038.chunk.js",
+    "static/js/865.7d75e463.chunk.js": "/My-personal-project/static/js/865.7d75e463.chunk.js",
+    "static/js/400.cf5db04a.chunk.js": "/My-personal-project/static/js/400.cf5db04a.chunk.js",
+    "index.html": "/My-personal-project/index.html"
   },
   "entrypoints": [
-    "static/css/main.7461f116.css",
-    "static/js/main.e2c6370d.js"
+    "static/css/main.30d51450.css",
+    "static/js/main.bb49d264.js"
   ]
 }

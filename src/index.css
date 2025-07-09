@@ -1,34 +1,50 @@
+/* Optimized base styles - load critical styles first */
 * {
   box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
+/* Dark mode optimizations */
 body.dark-mode {
-  background-color: #181818 !important;
-  color: #f5f5f5 !important;
-  transition: background 0.3s, color 0.3s;
+  background-color: #1a202c;
+  color: #e2e8f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode nav, body.dark-mode .title, body.dark-mode ul, body.dark-mode li {
-  background: transparent !important;
-  color: #f5f5f5 !important;
+/* Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+  /* Native lazy loading applied via HTML attribute */
 }
 
-body.dark-mode .crimson-text-regular {
-  color: #f5f5f5 !important;
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-body.dark-mode .resume-box {
-  background: rgba(30,30,30,0.85) !important;
-  border-color: #333 !important;
+/* Font loading optimization */
+@font-face {
+  font-family: 'Crimson Text';
+  font-display: swap; /* Improves loading performance */
+  src: local('Crimson Text');
 }
-
-body.dark-mode footer, body.dark-mode .footer {
-  background: #181818 !important;
-  color: #f5f5f5 !important;
-  border-top: 1px solid #333 !important;
-}
-
-/* Add more selectors as needed for your components */
